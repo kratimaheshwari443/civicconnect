@@ -1,0 +1,646 @@
+[
+  {
+    "id": "CC-2026-8950",
+    "date": "Nov 04, 2026 • 10:23 AM",
+    "category": "Roads, Potholes & Footpaths",
+    "location": "Indiranagar 100ft Road, Bangalore, Karnataka, India",
+    "citizen": "Mahesh Demo",
+    "phone": "9876543210",
+    "status": "Pending Review",
+    "desc": "Massive 2-foot pothole near metro pillar 128 blocking lane traffic.",
+    "department_notes": "Auto-triaged by AI to Bruhat Bengaluru Mahanagara Palike (BBMP) - Roads & Bridges Division (Zone: East, Ward: 128/129 jurisdiction). Priority: Critical. [By Dr. R. K. Sharma • TREE-OFF-101]",
+    "ai_key_issue": "Severe 2-foot deep pothole on Indiranagar 100ft Road near Metro Pillar 128 causing lane blockage and posing immediate safety hazards to two-wheelers and pedestrians.",
+    "ai_authority": "Bruhat Bengaluru Mahanagara Palike (BBMP) - Roads & Bridges Division (Zone: East, Ward: 128/129 jurisdiction)",
+    "ai_priority": "Critical",
+    "ai_legal_framework": "Karnataka Municipal Corporation Act, 1976 (Section 145 - Maintenance of Roads) and BBMP Standing Orders for Road Maintenance & Safety",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Immediate dispatch of Ward Engineer and Junior Engineer to Indiranagar 100ft Road. Measure exact dimensions (depth, width, length) of the pothole. Assess structural integrity of surrounding asphalt and sub-base. Check for underlying causes such as water logging, pipe burst, or soil erosion. Install temporary traffic cones and warning boards to divert traffic and ensure pedestrian safety.\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Cross-reference the location with BBMP's GIS mapping and recent utility work logs. Verify if any recent excavation permits were issued by BBMP or KSEB/BESL for this specific stretch. Check if the pothole resulted from unauthorized utility digging or natural deterioration. Review maintenance records for the last 6 months to determine if this is a recurring failure.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"If caused by unauthorized utility work, issue a show-cause notice to the responsible utility agency (e.g., KSEB) for non-compliance with restoration standards. Initiate emergency repair work using hot-mix asphalt (HMA) or cold patching material depending on weather conditions. Ensure the repair is done within 24 hours due to the 'Critical' priority and lane blockage.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"Post-repair, conduct a quality check to ensure the patched area is level with the surrounding road surface and free from cracks. Monitor the site for 7 days to check for re-opening or water seepage. Update the BBMP citizen grievance portal with the resolution status and close the ticket. If the issue recurs, escalate to the Zonal Commissioner for a comprehensive road resurfacing plan.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 04 \\u2022 10:23 AM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}, {\"name\": \"Pending Review\", \"time\": \"Nov 04 \\u2022 10:26 AM\", \"desc\": \"Auto-triaged by AI to Bruhat Bengaluru Mahanagara Palike (BBMP) - Roads & Bridges Division (Zone: East, Ward: 128/129 jurisdiction). Priority: Critical. [By Dr. R. K. Sharma \\u2022 TREE-OFF-101]\"}]",
+    "created_at": "2026-11-04 04:53:43",
+    "images_json": "[\"/static/uploads/complaints/proof_72975368_1_pothole_evidence.png\"]",
+    "ai_analysis": {
+      "key_issue": "Severe 2-foot deep pothole on Indiranagar 100ft Road near Metro Pillar 128 causing lane blockage and posing immediate safety hazards to two-wheelers and pedestrians.",
+      "assigned_authority": "Bruhat Bengaluru Mahanagara Palike (BBMP) - Roads & Bridges Division (Zone: East, Ward: 128/129 jurisdiction)",
+      "priority": "Critical",
+      "legal_framework": "Karnataka Municipal Corporation Act, 1976 (Section 145 - Maintenance of Roads) and BBMP Standing Orders for Road Maintenance & Safety",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Immediate dispatch of Ward Engineer and Junior Engineer to Indiranagar 100ft Road. Measure exact dimensions (depth, width, length) of the pothole. Assess structural integrity of surrounding asphalt and sub-base. Check for underlying causes such as water logging, pipe burst, or soil erosion. Install temporary traffic cones and warning boards to divert traffic and ensure pedestrian safety."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Cross-reference the location with BBMP's GIS mapping and recent utility work logs. Verify if any recent excavation permits were issued by BBMP or KSEB/BESL for this specific stretch. Check if the pothole resulted from unauthorized utility digging or natural deterioration. Review maintenance records for the last 6 months to determine if this is a recurring failure."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "If caused by unauthorized utility work, issue a show-cause notice to the responsible utility agency (e.g., KSEB) for non-compliance with restoration standards. Initiate emergency repair work using hot-mix asphalt (HMA) or cold patching material depending on weather conditions. Ensure the repair is done within 24 hours due to the 'Critical' priority and lane blockage."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "Post-repair, conduct a quality check to ensure the patched area is level with the surrounding road surface and free from cracks. Monitor the site for 7 days to check for re-opening or water seepage. Update the BBMP citizen grievance portal with the resolution status and close the ticket. If the issue recurs, escalate to the Zonal Commissioner for a comprehensive road resurfacing plan."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 04 • 10:23 AM",
+        "desc": "Grievance registered and placed in department triage queue."
+      },
+      {
+        "name": "Pending Review",
+        "time": "Nov 04 • 10:26 AM",
+        "desc": "Auto-triaged by AI to Bruhat Bengaluru Mahanagara Palike (BBMP) - Roads & Bridges Division (Zone: East, Ward: 128/129 jurisdiction). Priority: Critical. [By Dr. R. K. Sharma • TREE-OFF-101]"
+      }
+    ],
+    "images": [
+      "/static/uploads/complaints/proof_72975368_1_pothole_evidence.png"
+    ]
+  },
+  {
+    "id": "CC-2026-8949",
+    "date": "Nov 04, 2026 • 08:51 AM",
+    "category": "जल निकासी, सीवरेज एवं वर्षा जल",
+    "location": "Aligarh, Koil, Aligarh, Uttar Pradesh, 202001, India",
+    "citizen": "Krati Maheshwari",
+    "phone": "9828299088",
+    "status": "Pending Review",
+    "desc": "paani ki bachat",
+    "department_notes": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department. Priority: Medium.",
+    "ai_key_issue": "Inefficient water management and potential leakage/wastage in the local drainage or supply system, leading to water scarcity or flooding issues.",
+    "ai_authority": "Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "Uttar Pradesh Municipal Corporation Act, 2018 & UP Water Supply and Sewerage Board Regulations",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Field officers to conduct a physical survey of the 'Koil' area to identify visible water wastage, pipe bursts, or blocked drainage channels. Check for unauthorized tapping of water mains and assess the condition of existing stormwater drains.\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Review recent water consumption data for the area to detect anomalies indicating leakage. Verify if any new constructions have obtained proper water connection permits and if their drainage systems are connected to the municipal sewerage network as per bye-laws.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"Issue immediate repair orders for identified pipe bursts or blocked drains. If unauthorized connections are found, issue show-cause notices and disconnect illegal taps. Deploy teams for desilting of stormwater drains to prevent waterlogging.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"Verify the completion of pipe repairs and drain desilting. Implement water conservation measures such as rainwater harvesting incentives for local residents. Conduct a follow-up inspection after 7 days to ensure no recurrence of wastage and close the grievance.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 04 \\u2022 08:51 AM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}]",
+    "created_at": "2026-11-04 03:21:35",
+    "images_json": "[\"/static/uploads/complaints/proof_97fa71d6_1_Screenshot_2026-07-2.png\"]",
+    "ai_analysis": {
+      "key_issue": "Inefficient water management and potential leakage/wastage in the local drainage or supply system, leading to water scarcity or flooding issues.",
+      "assigned_authority": "Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department",
+      "priority": "Medium",
+      "legal_framework": "Uttar Pradesh Municipal Corporation Act, 2018 & UP Water Supply and Sewerage Board Regulations",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Field officers to conduct a physical survey of the 'Koil' area to identify visible water wastage, pipe bursts, or blocked drainage channels. Check for unauthorized tapping of water mains and assess the condition of existing stormwater drains."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Review recent water consumption data for the area to detect anomalies indicating leakage. Verify if any new constructions have obtained proper water connection permits and if their drainage systems are connected to the municipal sewerage network as per bye-laws."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "Issue immediate repair orders for identified pipe bursts or blocked drains. If unauthorized connections are found, issue show-cause notices and disconnect illegal taps. Deploy teams for desilting of stormwater drains to prevent waterlogging."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "Verify the completion of pipe repairs and drain desilting. Implement water conservation measures such as rainwater harvesting incentives for local residents. Conduct a follow-up inspection after 7 days to ensure no recurrence of wastage and close the grievance."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 04 • 08:51 AM",
+        "desc": "Grievance registered and placed in department triage queue."
+      }
+    ],
+    "images": [
+      "/static/uploads/complaints/proof_97fa71d6_1_Screenshot_2026-07-2.png"
+    ]
+  },
+  {
+    "id": "CC-2026-8948",
+    "date": "Nov 04, 2026 • 08:25 AM",
+    "category": "Drainage, Sewage & Stormwater",
+    "location": "Aligarh, Koil, Aligarh, Uttar Pradesh, 202001, India",
+    "citizen": "Krati Maheshwari",
+    "phone": "9828299088",
+    "status": "In Progress",
+    "desc": "it shows leakages in street taps",
+    "department_notes": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department. Priority: Medium. [By Dr. R. K. Sharma • TREE-OFF-101]",
+    "ai_key_issue": "Chronic leakage from public street water taps causing water wastage and potential waterlogging in the street",
+    "ai_authority": "Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "Uttar Pradesh Municipal Corporation Act, 1959 (Sections related to maintenance of public infrastructure and water supply) and UP Water Supply and Sewerage Board Regulations",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Field officers from the Water Supply Department must visit the specific location in Koil, Aligarh, to identify the exact tap(s) leaking. They must assess the severity of the leak (drip vs. continuous flow), check for any visible damage to the tap mechanism, and document the impact on the street surface (erosion or waterlogging).\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Verify the maintenance logs for the specific water distribution line serving this area. Check if the tap is a public utility tap or a private connection point. Review recent water pressure test reports for the sector to ensure the leak is not indicative of a larger pipeline burst or pressure failure.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"Issue an immediate work order to the local plumbing contractor or municipal repair team to replace the faulty tap washer or the entire tap assembly. If the leak is due to a burst pipe, initiate emergency repair protocols. Ensure the area is cordoned off if necessary to prevent slip hazards.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"After repair, conduct a 48-hour monitoring period to ensure no further leakage occurs. Verify that the street surface has been restored if it was damaged by the leak. Close the grievance ticket only after a final inspection confirms the tap is functioning correctly without leakage and the area is clean.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 04 \\u2022 08:25 AM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 04 \\u2022 08:27 AM\", \"desc\": \"Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department. Priority: Medium. [By Dr. R. K. Sharma \\u2022 TREE-OFF-101]\"}]",
+    "created_at": "2026-11-04 02:55:57",
+    "images_json": "[\"/static/uploads/complaints/proof_863dd084_1_Screenshot_2026-11-0.png\"]",
+    "ai_analysis": {
+      "key_issue": "Chronic leakage from public street water taps causing water wastage and potential waterlogging in the street",
+      "assigned_authority": "Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department",
+      "priority": "Medium",
+      "legal_framework": "Uttar Pradesh Municipal Corporation Act, 1959 (Sections related to maintenance of public infrastructure and water supply) and UP Water Supply and Sewerage Board Regulations",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Field officers from the Water Supply Department must visit the specific location in Koil, Aligarh, to identify the exact tap(s) leaking. They must assess the severity of the leak (drip vs. continuous flow), check for any visible damage to the tap mechanism, and document the impact on the street surface (erosion or waterlogging)."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Verify the maintenance logs for the specific water distribution line serving this area. Check if the tap is a public utility tap or a private connection point. Review recent water pressure test reports for the sector to ensure the leak is not indicative of a larger pipeline burst or pressure failure."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "Issue an immediate work order to the local plumbing contractor or municipal repair team to replace the faulty tap washer or the entire tap assembly. If the leak is due to a burst pipe, initiate emergency repair protocols. Ensure the area is cordoned off if necessary to prevent slip hazards."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "After repair, conduct a 48-hour monitoring period to ensure no further leakage occurs. Verify that the street surface has been restored if it was damaged by the leak. Close the grievance ticket only after a final inspection confirms the tap is functioning correctly without leakage and the area is clean."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 04 • 08:25 AM",
+        "desc": "Grievance registered and placed in department triage queue."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 04 • 08:27 AM",
+        "desc": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Water Supply & Sewerage Department. Priority: Medium. [By Dr. R. K. Sharma • TREE-OFF-101]"
+      }
+    ],
+    "images": [
+      "/static/uploads/complaints/proof_863dd084_1_Screenshot_2026-11-0.png"
+    ]
+  },
+  {
+    "id": "CC-2026-8947",
+    "date": "Nov 04, 2026 • 07:35 AM",
+    "category": "Drainage, Sewage & Stormwater",
+    "location": "Aligarh",
+    "citizen": "Krati Maheshwari",
+    "phone": "9828299088",
+    "status": "Pending Review",
+    "desc": "leakage of taps",
+    "department_notes": "Auto-triaged by AI to UP Jal Nigam (Uttar Pradesh Water Supply and Sewerage Board) - Aligarh Zone. Priority: Medium.",
+    "ai_key_issue": "Persistent leakage from public water supply taps causing water wastage and potential local waterlogging in Aligarh",
+    "ai_authority": "UP Jal Nigam (Uttar Pradesh Water Supply and Sewerage Board) - Aligarh Zone",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "Uttar Pradesh Water Supply and Sewerage Board Act, 1985 & Municipal Water Supply Bye-laws",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Field officers from UP Jal Nigam must visit the specific location to identify the exact source of leakage (tap head, pipe joint, or valve). They must measure the flow rate of the leak, assess the extent of waterlogging on the ground, and document the condition of the surrounding infrastructure with photographs and GPS coordinates.\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Verify the maintenance records of the specific water distribution line in the Aligarh zone. Check if the area is under any recent construction or road work that might have compromised the pipeline integrity. Review the water metering data for the affected sector to quantify the estimated water loss over the past month.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"Issue an immediate repair order to the maintenance crew. If the leak is due to a faulty public tap, replace the tap head or valve. If it is a pipeline burst, isolate the section and repair the pipe. Ensure that the water supply to the affected area is temporarily regulated to prevent further wastage during the repair process.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"After repair, conduct a pressure test on the repaired section to ensure no further leakage. Restore the water supply to normal levels. Monitor the site for 48 hours to confirm the leak has stopped and the waterlogging has cleared. Update the maintenance database with the repair details and close the grievance ticket.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 04 \\u2022 07:35 AM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}]",
+    "created_at": "2026-11-04 02:05:18",
+    "images_json": "[]",
+    "ai_analysis": {
+      "key_issue": "Persistent leakage from public water supply taps causing water wastage and potential local waterlogging in Aligarh",
+      "assigned_authority": "UP Jal Nigam (Uttar Pradesh Water Supply and Sewerage Board) - Aligarh Zone",
+      "priority": "Medium",
+      "legal_framework": "Uttar Pradesh Water Supply and Sewerage Board Act, 1985 & Municipal Water Supply Bye-laws",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Field officers from UP Jal Nigam must visit the specific location to identify the exact source of leakage (tap head, pipe joint, or valve). They must measure the flow rate of the leak, assess the extent of waterlogging on the ground, and document the condition of the surrounding infrastructure with photographs and GPS coordinates."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Verify the maintenance records of the specific water distribution line in the Aligarh zone. Check if the area is under any recent construction or road work that might have compromised the pipeline integrity. Review the water metering data for the affected sector to quantify the estimated water loss over the past month."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "Issue an immediate repair order to the maintenance crew. If the leak is due to a faulty public tap, replace the tap head or valve. If it is a pipeline burst, isolate the section and repair the pipe. Ensure that the water supply to the affected area is temporarily regulated to prevent further wastage during the repair process."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "After repair, conduct a pressure test on the repaired section to ensure no further leakage. Restore the water supply to normal levels. Monitor the site for 48 hours to confirm the leak has stopped and the waterlogging has cleared. Update the maintenance database with the repair details and close the grievance ticket."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 04 • 07:35 AM",
+        "desc": "Grievance registered and placed in department triage queue."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8946",
+    "date": "Nov 04, 2026 • 07:24 AM",
+    "category": "Drainage, Sewage & Stormwater",
+    "location": "Aligarh",
+    "citizen": "Krati Maheshwari",
+    "phone": "9876543219",
+    "status": "Pending Review",
+    "desc": "leakage of street taps",
+    "department_notes": "Auto-triaged by AI to UP Jal Nigam (Uttar Pradesh Jal Nigam) - Aligarh Zone / Municipal Water Supply Department. Priority: Medium.",
+    "ai_key_issue": "Persistent leakage from public street water taps causing water wastage, potential waterlogging, and structural damage to road infrastructure in Aligarh.",
+    "ai_authority": "UP Jal Nigam (Uttar Pradesh Jal Nigam) - Aligarh Zone / Municipal Water Supply Department",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "Uttar Pradesh Jal Nigam Act, 1986; UP Municipal Corporation Act, 1959 (Water Supply & Sanitation provisions); Central Water (Prevention & Control of Pollution) Cess Act, 1980 (indirectly, regarding resource conservation)",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Field engineers from UP Jal Nigam and Municipal Water Supply Department to visit the specific street location. They must measure the leakage rate (liters per minute), assess the extent of waterlogging on the road surface, and check for any immediate safety hazards such as slippery surfaces or erosion of the roadbed. Photographs and video evidence of the active leak must be documented.\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Review the maintenance logs and last inspection records for the specific water tap and associated pipeline section. Verify if the tap is an authorized public utility point or an illegal connection. Check the zoning plan to ensure the tap's location does not conflict with recent road widening or drainage projects. Confirm the age of the pipeline to determine if it is beyond its useful life.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"Issue an immediate 'Stop Leak' directive to the maintenance crew. If the leak is due to a broken valve or pipe, initiate emergency repair work. If the tap is unauthorized or non-functional, seal it off. If the leakage is causing significant road damage, coordinate with the Road Maintenance Division to temporarily restrict heavy vehicle traffic to prevent further structural failure until repairs are complete.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"After repair, conduct a pressure test on the pipeline to ensure no further leakage. Verify that the road surface has been restored and is dry. Monitor the site for 48 hours to ensure the leak has not recurred. Update the maintenance database with the repair details and close the grievance ticket. If the pipeline is old, schedule a long-term replacement plan for the section.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 04 \\u2022 07:24 AM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}]",
+    "created_at": "2026-11-04 01:54:19",
+    "images_json": "[]",
+    "ai_analysis": {
+      "key_issue": "Persistent leakage from public street water taps causing water wastage, potential waterlogging, and structural damage to road infrastructure in Aligarh.",
+      "assigned_authority": "UP Jal Nigam (Uttar Pradesh Jal Nigam) - Aligarh Zone / Municipal Water Supply Department",
+      "priority": "Medium",
+      "legal_framework": "Uttar Pradesh Jal Nigam Act, 1986; UP Municipal Corporation Act, 1959 (Water Supply & Sanitation provisions); Central Water (Prevention & Control of Pollution) Cess Act, 1980 (indirectly, regarding resource conservation)",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Field engineers from UP Jal Nigam and Municipal Water Supply Department to visit the specific street location. They must measure the leakage rate (liters per minute), assess the extent of waterlogging on the road surface, and check for any immediate safety hazards such as slippery surfaces or erosion of the roadbed. Photographs and video evidence of the active leak must be documented."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Review the maintenance logs and last inspection records for the specific water tap and associated pipeline section. Verify if the tap is an authorized public utility point or an illegal connection. Check the zoning plan to ensure the tap's location does not conflict with recent road widening or drainage projects. Confirm the age of the pipeline to determine if it is beyond its useful life."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "Issue an immediate 'Stop Leak' directive to the maintenance crew. If the leak is due to a broken valve or pipe, initiate emergency repair work. If the tap is unauthorized or non-functional, seal it off. If the leakage is causing significant road damage, coordinate with the Road Maintenance Division to temporarily restrict heavy vehicle traffic to prevent further structural failure until repairs are complete."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "After repair, conduct a pressure test on the pipeline to ensure no further leakage. Verify that the road surface has been restored and is dry. Monitor the site for 48 hours to ensure the leak has not recurred. Update the maintenance database with the repair details and close the grievance ticket. If the pipeline is old, schedule a long-term replacement plan for the section."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 04 • 07:24 AM",
+        "desc": "Grievance registered and placed in department triage queue."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8945",
+    "date": "Nov 03, 2026 • 07:52 PM",
+    "category": "Parks, Playgrounds & Trees",
+    "location": "Aligarh, Uttar Pradesh, India",
+    "citizen": "Krati Maheshwari",
+    "phone": "9234567883",
+    "status": "Pending Review",
+    "desc": "deforestation",
+    "department_notes": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High.",
+    "ai_key_issue": "Unauthorized felling and destruction of trees within a public park or green belt area in Aligarh, constituting illegal deforestation and loss of urban canopy cover.",
+    "ai_authority": "Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).",
+    "ai_priority": "High",
+    "ai_legal_framework": "Uttar Pradesh Forest Act, 1977; Aligarh Municipal Corporation Bye-laws regarding protection of trees and green spaces; Indian Forest Act, 1927 (if applicable to state land); Environment (Protection) Act, 1986.",
+    "ai_roadmap_json": "[{\"phase\": \"1. Site Inspection\", \"procedure\": \"Field officers from the AMC Parks Division and local police must immediately secure the site to prevent further damage. Conduct a detailed survey to count the number of felled trees, identify species, and measure the diameter at breast height (DBH) of stumps. Photograph and video document the scene, including any machinery or debris left behind, and map the exact extent of the cleared area against the original park layout plan.\"}, {\"phase\": \"2. Permit Verification\", \"procedure\": \"Cross-reference the location with the AMC's approved tree felling register and any existing NOCs (No Objection Certificates) from the Urban Forestry Committee. Verify if any construction permits or land acquisition orders were issued for this specific plot. Check with the UP Forest Department to confirm if the land is classified as state forest or reserved area, which would elevate the legal severity. Review CCTV footage from nearby municipal or private sources to identify the time and actors involved in the felling.\"}, {\"phase\": \"3. Enforcement / Action\", \"procedure\": \"Issue an immediate stop-work order if any activity is ongoing. If unauthorized, file a case under the relevant sections of the UP Forest Act or Municipal Bye-laws against the responsible individuals or entities. Impound any sawing equipment or vehicles found at the site. Issue a show-cause notice to the property owner or contractor demanding an explanation for the violation and calculating the penalty based on the value of the trees destroyed.\"}, {\"phase\": \"4. Remediation & Closure\", \"procedure\": \"Mandate the restoration of the green cover by planting an equivalent number of native species within 30 days, as per the AMC's tree replacement policy. Monitor the survival rate of new saplings for at least one monsoon season. Close the case only after the penalty is paid, the restoration is verified by a joint team of AMC and Forest Department officers, and a compliance certificate is issued.\"}]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 03 \\u2022 07:52 PM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}, {\"name\": \"Pending Review\", \"time\": \"Nov 03 \\u2022 07:54 PM\", \"desc\": \"Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High.\"}, {\"name\": \"Pending Review\", \"time\": \"Nov 03 \\u2022 08:23 PM\", \"desc\": \"Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High.\"}, {\"name\": \"Pending Review\", \"time\": \"Nov 03 \\u2022 08:27 PM\", \"desc\": \"Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High.\"}]",
+    "created_at": "2026-11-03 14:22:48",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "Unauthorized felling and destruction of trees within a public park or green belt area in Aligarh, constituting illegal deforestation and loss of urban canopy cover.",
+      "assigned_authority": "Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).",
+      "priority": "High",
+      "legal_framework": "Uttar Pradesh Forest Act, 1977; Aligarh Municipal Corporation Bye-laws regarding protection of trees and green spaces; Indian Forest Act, 1927 (if applicable to state land); Environment (Protection) Act, 1986.",
+      "monitoring_roadmap": [
+        {
+          "phase": "1. Site Inspection",
+          "procedure": "Field officers from the AMC Parks Division and local police must immediately secure the site to prevent further damage. Conduct a detailed survey to count the number of felled trees, identify species, and measure the diameter at breast height (DBH) of stumps. Photograph and video document the scene, including any machinery or debris left behind, and map the exact extent of the cleared area against the original park layout plan."
+        },
+        {
+          "phase": "2. Permit Verification",
+          "procedure": "Cross-reference the location with the AMC's approved tree felling register and any existing NOCs (No Objection Certificates) from the Urban Forestry Committee. Verify if any construction permits or land acquisition orders were issued for this specific plot. Check with the UP Forest Department to confirm if the land is classified as state forest or reserved area, which would elevate the legal severity. Review CCTV footage from nearby municipal or private sources to identify the time and actors involved in the felling."
+        },
+        {
+          "phase": "3. Enforcement / Action",
+          "procedure": "Issue an immediate stop-work order if any activity is ongoing. If unauthorized, file a case under the relevant sections of the UP Forest Act or Municipal Bye-laws against the responsible individuals or entities. Impound any sawing equipment or vehicles found at the site. Issue a show-cause notice to the property owner or contractor demanding an explanation for the violation and calculating the penalty based on the value of the trees destroyed."
+        },
+        {
+          "phase": "4. Remediation & Closure",
+          "procedure": "Mandate the restoration of the green cover by planting an equivalent number of native species within 30 days, as per the AMC's tree replacement policy. Monitor the survival rate of new saplings for at least one monsoon season. Close the case only after the penalty is paid, the restoration is verified by a joint team of AMC and Forest Department officers, and a compliance certificate is issued."
+        }
+      ]
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 03 • 07:52 PM",
+        "desc": "Grievance registered and placed in department triage queue."
+      },
+      {
+        "name": "Pending Review",
+        "time": "Nov 03 • 07:54 PM",
+        "desc": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High."
+      },
+      {
+        "name": "Pending Review",
+        "time": "Nov 03 • 08:23 PM",
+        "desc": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High."
+      },
+      {
+        "name": "Pending Review",
+        "time": "Nov 03 • 08:27 PM",
+        "desc": "Auto-triaged by AI to Aligarh Municipal Corporation (AMC) - Urban Forestry & Parks Division, in coordination with the Uttar Pradesh Forest Department (if the area falls under state forest land or protected zones).. Priority: High."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8944",
+    "date": "Nov 03, 2026 • 05:41 PM",
+    "category": "Parks, Playgrounds & Trees",
+    "location": "Brahmanpuri, Hyderabad, Telangana, India",
+    "citizen": "Krati Maheshwari",
+    "phone": "7895643456",
+    "status": "Pending Review",
+    "desc": "deforestation - 50 trees were cut",
+    "department_notes": "Awaiting initial triage and officer assignment.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 03 \\u2022 05:41 PM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 03 • 05:41 PM",
+        "desc": "Grievance registered and placed in department triage queue."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8943",
+    "date": "Nov 03, 2026 • 05:36 PM",
+    "category": "Water Supply",
+    "location": "Indiranagar 100ft Road, Bangalore, India",
+    "citizen": "Aakash Verma",
+    "phone": "9876543210",
+    "status": "In Progress",
+    "desc": "Pipeline leakage near metro station pillar 42.",
+    "department_notes": "JE Sharma assigned. Water tank repair team on route.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 03 \\u2022 05:36 PM\", \"desc\": \"Grievance registered and placed in department triage queue.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 03 \\u2022 05:36 PM\", \"desc\": \"JE Sharma assigned. Water tank repair team on route.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 03 • 05:36 PM",
+        "desc": "Grievance registered and placed in department triage queue."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 03 • 05:36 PM",
+        "desc": "JE Sharma assigned. Water tank repair team on route."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8942",
+    "date": "Nov 2, 2026 • 09:30 AM",
+    "category": "Drainage & Sewage",
+    "location": "5th Main Road, Ward 12 (Near Market)",
+    "citizen": "Ramesh Kumar",
+    "phone": "98765 43210",
+    "status": "In Progress",
+    "desc": "Heavy overflow from the main sewer line across the sidewalk near the vegetable market. Pedestrians cannot cross and foul water is accumulating near shop entrances.",
+    "department_notes": "Field inspection completed. [By Dr. R. K. Sharma • TREE-OFF-101]",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 2 \\u2022 09:32 AM\", \"desc\": \"Grievance verified and logged into Municipal Ward 12 dispatch queue.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 3 \\u2022 08:45 AM\", \"desc\": \"Junior Engineer inspection complete. Desilting truck and maintenance crew dispatched to site.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 03 \\u2022 08:30 PM\", \"desc\": \"Field inspection completed. [By Dr. R. K. Sharma \\u2022 TREE-OFF-101]\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 2 • 09:32 AM",
+        "desc": "Grievance verified and logged into Municipal Ward 12 dispatch queue."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 3 • 08:45 AM",
+        "desc": "Junior Engineer inspection complete. Desilting truck and maintenance crew dispatched to site."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 03 • 08:30 PM",
+        "desc": "Field inspection completed. [By Dr. R. K. Sharma • TREE-OFF-101]"
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8941",
+    "date": "Nov 2, 2026 • 08:15 AM",
+    "category": "Streetlights",
+    "location": "Cross 4, Patel Nagar, Ward 12",
+    "citizen": "Anonymous",
+    "phone": "—",
+    "status": "Pending Review",
+    "desc": "Three consecutive LED streetlights are flickering and completely blacked out after sunset. Walking home from the bus terminal is unsafe for residents.",
+    "department_notes": "Awaiting initial night patrol verification and electrician crew assignment.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 2 \\u2022 08:15 AM\", \"desc\": \"Grievance registered. Queued for electrical maintenance team.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 2 • 08:15 AM",
+        "desc": "Grievance registered. Queued for electrical maintenance team."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8939",
+    "date": "Nov 1, 2026 • 04:20 PM",
+    "category": "Waste Collection",
+    "location": "Sector 8 Market Gate, Ward 7",
+    "citizen": "Sunita Mehra",
+    "phone": "98112 23344",
+    "status": "In Progress",
+    "desc": "Municipal community dumper has overflowed for four consecutive days. Stray dogs are tearing garbage onto the main vehicle lane.",
+    "department_notes": "Compactor truck route rescheduled for Ward 7 clearance.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 1 \\u2022 04:20 PM\", \"desc\": \"Logged with Sanitation Inspector.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 2 \\u2022 10:00 AM\", \"desc\": \"Compactor truck dispatched to clear market dumper.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 1 • 04:20 PM",
+        "desc": "Logged with Sanitation Inspector."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 2 • 10:00 AM",
+        "desc": "Compactor truck dispatched to clear market dumper."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8935",
+    "date": "Nov 1, 2026 • 11:05 AM",
+    "category": "Roads & Footpaths",
+    "location": "Ring Road Junction, Ward 9",
+    "citizen": "Vikram Singh",
+    "phone": "97110 02233",
+    "status": "Resolved",
+    "desc": "Deep pothole right after traffic light turn. Two two-wheelers skidded yesterday. Patching work completed by road maintenance team on Nov 2.",
+    "department_notes": "Cold-mix asphalt patching completed. Surface leveled and inspected.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Nov 1 \\u2022 11:05 AM\", \"desc\": \"Logged and escalated as road safety hazard.\"}, {\"name\": \"In Progress\", \"time\": \"Nov 1 \\u2022 03:00 PM\", \"desc\": \"Road maintenance crew dispatched with asphalt mixer.\"}, {\"name\": \"Resolved\", \"time\": \"Nov 2 \\u2022 05:30 PM\", \"desc\": \"Pothole filled and road leveled. Site closed.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Nov 1 • 11:05 AM",
+        "desc": "Logged and escalated as road safety hazard."
+      },
+      {
+        "name": "In Progress",
+        "time": "Nov 1 • 03:00 PM",
+        "desc": "Road maintenance crew dispatched with asphalt mixer."
+      },
+      {
+        "name": "Resolved",
+        "time": "Nov 2 • 05:30 PM",
+        "desc": "Pothole filled and road leveled. Site closed."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8930",
+    "date": "Oct 31, 2026 • 07:40 AM",
+    "category": "Water Supply",
+    "location": "Pocket B, Block 3, Ward 11",
+    "citizen": "Anonymous",
+    "phone": "—",
+    "status": "Resolved",
+    "desc": "Tap water was muddy and discolored during the morning supply window. Pipeline flushed and sediment cleared by water utility staff.",
+    "department_notes": "Main distribution valve flushed. Water clarity tested and verified normal.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Oct 31 \\u2022 07:40 AM\", \"desc\": \"Water quality report logged with Jal Board.\"}, {\"name\": \"Resolved\", \"time\": \"Oct 31 \\u2022 01:15 PM\", \"desc\": \"Pipeline flush complete. Clear water confirmed.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Oct 31 • 07:40 AM",
+        "desc": "Water quality report logged with Jal Board."
+      },
+      {
+        "name": "Resolved",
+        "time": "Oct 31 • 01:15 PM",
+        "desc": "Pipeline flush complete. Clear water confirmed."
+      }
+    ],
+    "images": []
+  },
+  {
+    "id": "CC-2026-8928",
+    "date": "Oct 30, 2026 • 02:15 PM",
+    "category": "Parks & Spaces",
+    "location": "Civic Garden, Sector 5, Ward 5",
+    "citizen": "Anita Roy",
+    "phone": "98450 12345",
+    "status": "Pending Review",
+    "desc": "Children's play equipment swing chain broke and wooden bench slats are splintered. Needs inspection by horticulture / parks supervisor.",
+    "department_notes": "Assigned to Horticulture & Parks maintenance division.",
+    "ai_key_issue": "",
+    "ai_authority": "",
+    "ai_priority": "Medium",
+    "ai_legal_framework": "",
+    "ai_roadmap_json": "[]",
+    "timeline_json": "[{\"name\": \"Received\", \"time\": \"Oct 30 \\u2022 02:15 PM\", \"desc\": \"Complaint recorded for Ward 5 parks maintenance.\"}]",
+    "created_at": "2026-11-03 13:30:59",
+    "images_json": null,
+    "ai_analysis": {
+      "key_issue": "",
+      "assigned_authority": "",
+      "priority": "Medium",
+      "legal_framework": "",
+      "monitoring_roadmap": []
+    },
+    "timeline": [
+      {
+        "name": "Received",
+        "time": "Oct 30 • 02:15 PM",
+        "desc": "Complaint recorded for Ward 5 parks maintenance."
+      }
+    ],
+    "images": []
+  }
+]

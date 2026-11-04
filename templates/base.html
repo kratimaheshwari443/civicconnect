@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}CivicConnect | Citizen Grievance Support{% endblock %}</title>
+  <meta name="description" content="CivicConnect - Multilingual citizen grievance support platform for local civic complaints and resolution tracking.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/civicconnect.css') if url_for is defined else 'static/css/civicconnect.css' }}">
+  <!-- Leaflet CSS for map picker -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Shared Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <!-- CivicConnect Logo & Brand -->
+      <a href="{{ url_for('file_complaint') if url_for is defined else 'file_complaint.html' }}" class="brand-link" aria-label="CivicConnect Home">
+        <div class="brand-icon-wrap" aria-hidden="true">
+          <!-- Clean Municipal Crest SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18"/>
+            <path d="M5 21V9l7-5 7 5v12"/>
+            <path d="M9 21v-5a3 3 0 0 1 6 0v5"/>
+            <circle cx="12" cy="11" r="1.5"/>
+          </svg>
+        </div>
+        <div class="brand-title-group">
+          <span class="brand-name">CivicConnect</span>
+          <span class="brand-tagline">Citizen Grievance Support</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation Links -->
+      <nav id="mainNav" class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li>
+            <a href="{{ url_for('file_complaint') if url_for is defined else 'file_complaint.html' }}" class="nav-link {% if active_page == 'file' %}active{% endif %}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              <span>File a Complaint</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('track_complaint') if url_for is defined else 'track_complaint.html' }}" class="nav-link {% if active_page == 'track' %}active{% endif %}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <span>Track a Complaint</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url_for('department_dashboard') if url_for is defined else 'department_dashboard.html' }}" class="nav-link {% if active_page == 'dashboard' %}active{% endif %}">
+              {% if session and session.get('officer') %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: #16a34a;"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                <span>Officer Dashboard</span>
+                <span style="font-size: 0.65rem; background: #dcfce7; color: #166534; padding: 0.1rem 0.35rem; border-radius: 4px; font-weight: 700; border: 1px solid #86efac; margin-left: 0.25rem;">Active</span>
+              {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                <span>Officer Portal</span>
+                <span style="font-size: 0.65rem; background: #fee2e2; color: #991b1b; padding: 0.1rem 0.35rem; border-radius: 4px; font-weight: 700; border: 1px solid #fca5a5; margin-left: 0.25rem;">Staff</span>
+              {% endif %}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Language Selector & Mobile Toggle -->
+      <div class="header-actions">
+        <!-- Interactive Bilingual Language Selector -->
+        <div class="lang-selector-wrap" style="position: relative;">
+          <button type="button" id="langSelectorBtn" class="lang-selector" aria-haspopup="true" aria-expanded="false" aria-label="Select language" style="cursor: pointer; display: flex; align-items: center; gap: 0.45rem; font-weight: 600; padding: 0.45rem 0.85rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span id="currentLangDisplay">English</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <!-- Language Dropdown Menu -->
+          <div id="langDropdownMenu" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #ffffff; border: 1.5px solid var(--color-border); border-radius: var(--radius-md); box-shadow: var(--shadow-md); z-index: 1000; min-width: 190px; overflow: hidden;">
+            <button type="button" class="lang-choice-btn" data-lang="en" style="display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.65rem 0.85rem; border: none; background: transparent; cursor: pointer; text-align: left; font-size: 0.875rem; color: var(--color-text);">
+              <span>🇬🇧</span>
+              <strong style="flex: 1;">English</strong>
+              <span class="lang-check" id="check-en" style="color: var(--color-accent); font-weight: bold;">✓</span>
+            </button>
+            <button type="button" class="lang-choice-btn" data-lang="hi" style="display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.65rem 0.85rem; border: none; background: transparent; cursor: pointer; text-align: left; font-size: 0.875rem; color: var(--color-text); border-top: 1px solid var(--color-border-subtle);">
+              <span>🇮🇳</span>
+              <strong style="flex: 1;">हिन्दी (Hindi)</strong>
+              <span class="lang-check" id="check-hi" style="display: none; color: var(--color-accent); font-weight: bold;">✓</span>
+            </button>
+            <button type="button" class="lang-choice-btn" data-lang="ta" style="display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.65rem 0.85rem; border: none; background: transparent; cursor: pointer; text-align: left; font-size: 0.875rem; color: var(--color-text); border-top: 1px solid var(--color-border-subtle);">
+              <span>🇮🇳</span>
+              <strong style="flex: 1;">தமிழ் (Tamil)</strong>
+              <span class="lang-check" id="check-ta" style="display: none; color: var(--color-accent); font-weight: bold;">✓</span>
+            </button>
+            <button type="button" class="lang-choice-btn" data-lang="kn" style="display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.65rem 0.85rem; border: none; background: transparent; cursor: pointer; text-align: left; font-size: 0.875rem; color: var(--color-text); border-top: 1px solid var(--color-border-subtle);">
+              <span>🇮🇳</span>
+              <strong style="flex: 1;">ಕನ್ನಡ (Kannada)</strong>
+              <span class="lang-check" id="check-kn" style="display: none; color: var(--color-accent); font-weight: bold;">✓</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" id="mobileNavToggle" class="mobile-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Landmark -->
+  <main id="mainContent" class="main-content">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <!-- Shared Floating Chat Assistant Bubble & Panel -->
+  <div class="chat-assistant-container" aria-label="CivicConnect Citizen Assistant">
+    <!-- Floating Action Button -->
+    <button type="button" id="chatFab" class="chat-fab" aria-haspopup="dialog" aria-expanded="false" aria-controls="chatPanel">
+      <span class="chat-fab-pulse" aria-hidden="true"></span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <span>Need Help?</span>
+    </button>
+
+    <!-- Compact Floating Assistant Panel -->
+    <section id="chatPanel" class="chat-panel" role="dialog" aria-label="CivicConnect Assistant Dialog" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <div class="chat-title">CivicConnect Assistant</div>
+            <div class="chat-subtitle">Citizen Helpdesk &bull; Prototype</div>
+          </div>
+        </div>
+        <button type="button" id="chatCloseBtn" class="chat-close-btn" aria-label="Close assistant">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="chatBody" class="chat-body" role="log" aria-live="polite">
+        <!-- Initial Greeting Message -->
+        <div class="chat-bubble chat-bubble-bot">
+          Hello! I am your CivicConnect assistant. How can I assist you with filing or tracking your local civic grievance today?
+        </div>
+
+        <!-- Sample Quick Action Chips -->
+        <div class="chat-suggestions" aria-label="Common quick questions">
+          <button type="button" class="chat-chip">How do I file a complaint?</button>
+          <button type="button" class="chat-chip">Where is my tracking number?</button>
+          <button type="button" class="chat-chip">Expected resolution times</button>
+        </div>
+      </div>
+
+      <div class="chat-footer">
+        <form id="chatForm" class="chat-form">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Ask a question..." aria-label="Message input for assistant">
+          <button type="submit" class="chat-send-btn" aria-label="Send message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Shared Accessible Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>CivicConnect</h3>
+          <p>A modern citizen grievance support platform empowering communities to report local issues, track resolution, and collaborate with municipal departments.</p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-links-col">
+            <h4>Quick Navigation</h4>
+            <ul>
+              <li><a href="{{ url_for('file_complaint') if url_for is defined else 'file_complaint.html' }}">File a Complaint</a></li>
+              <li><a href="{{ url_for('track_complaint') if url_for is defined else 'track_complaint.html' }}">Track Complaint Status</a></li>
+              <li><a href="{{ url_for('department_dashboard') if url_for is defined else 'department_dashboard.html' }}">Department Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Public Inquiries</h4>
+            <ul>
+              <li><span style="color: #d1e3f0;">Toll-free Civic Helpline:</span> 1800-000-CIVIC</li>
+              <li><span style="color: #d1e3f0;">Service Hours:</span> Mon–Sat, 8am – 8pm</li>
+              <li><span style="color: #d1e3f0;">Emergency Services:</span> Dial 112</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 CivicConnect Prototype. Designed for civic grievance management.</div>
+        <div>Privacy Notice &bull; Student UI/UX Prototype &bull; No live government connection</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS for map picker -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="{{ url_for('static', filename='js/translations.js') if url_for is defined else 'static/js/translations.js' }}"></script>
+  <script src="{{ url_for('static', filename='js/civicconnect.js') if url_for is defined else 'static/js/civicconnect.js' }}"></script>
+</body>
+</html>

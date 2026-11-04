@@ -1,0 +1,22 @@
+# Python environment & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Private environment variables & API keys (CRITICAL: NEVER COMMIT .env)
+.env
+.env.local
+.env.*.local
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Uploaded test proof images (preserve folder structure via .gitkeep)
+static/uploads/complaints/*
+!static/uploads/complaints/.gitkeep

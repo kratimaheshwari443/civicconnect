@@ -1,0 +1,392 @@
+{% extends "base.html" %}
+
+{% block title %}Department Dashboard | CivicConnect{% endblock %}
+
+{% set active_page = "dashboard" %}
+
+{% block content %}
+<!-- Page Intro Heading with Logged-in Officer Card -->
+<div class="page-intro" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+  <div>
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+      <span style="background: #dcfce7; color: #166534; font-size: 0.725rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: var(--radius-full); border: 1px solid #86efac; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 0.35rem;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: #16a34a;"></span>
+        Authorized Officer Session
+      </span>
+      <span style="font-size: 0.75rem; color: var(--color-text-muted);">Badge: <strong>{{ officer.badge if officer else 'SEC-OFF' }}</strong></span>
+    </div>
+    <h1 class="page-title" style="margin-bottom: 0.25rem;">Department Operations Dashboard</h1>
+    <p class="page-subtitle" style="margin: 0;">
+      Logged in as: <strong>{{ officer.name if officer else 'Municipal Staff' }}</strong> &bull; <em>{{ officer.department if officer else 'Municipal Services Division' }}</em>
+    </p>
+  </div>
+  
+  <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+    <div style="font-size: 0.8125rem; color: var(--color-text-muted); background: var(--color-surface); padding: 0.4rem 0.85rem; border-radius: var(--radius-full); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 0.4rem;">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #16a34a; display: inline-block;"></span>
+      <span>Queue: <strong id="headerTotalCount">{{ total_count }}</strong> Complaints</span>
+    </div>
+    <a href="{{ url_for('department_logout') }}" class="btn btn-secondary btn-sm" style="color: #991b1b; border-color: #fca5a5;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span>Sign Out</span>
+    </a>
+  </div>
+</div>
+
+<!-- =========================================================================
+     Summary Metric KPI Cards
+     ========================================================================= -->
+<div class="dashboard-metrics-grid" role="region" aria-label="Grievance summary statistics">
+  <!-- Card 1: Total -->
+  <div class="metric-card">
+    <div class="metric-icon-wrap navy" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    <div>
+      <div class="metric-label">Total Grievances</div>
+      <div id="metricTotal" class="metric-val">{{ total_count }}</div>
+      <div class="metric-trend">All submitted complaints</div>
+    </div>
+  </div>
+
+  <!-- Card 2: Pending Review -->
+  <div class="metric-card">
+    <div class="metric-icon-wrap amber" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <div>
+      <div class="metric-label">Pending Review</div>
+      <div id="metricPending" class="metric-val" style="color: #b45309;">{{ pending_count }}</div>
+      <div class="metric-trend">Awaiting field triage</div>
+    </div>
+  </div>
+
+  <!-- Card 3: In Progress -->
+  <div class="metric-card">
+    <div class="metric-icon-wrap sky" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    </div>
+    <div>
+      <div class="metric-label">In Progress</div>
+      <div id="metricProgress" class="metric-val" style="color: #0369a1;">{{ progress_count }}</div>
+      <div class="metric-trend">Crews dispatched on site</div>
+    </div>
+  </div>
+
+  <!-- Card 4: Resolved -->
+  <div class="metric-card">
+    <div class="metric-icon-wrap emerald" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <div>
+      <div class="metric-label">Resolved</div>
+      <div id="metricResolved" class="metric-val" style="color: #15803d;">{{ resolved_count }}</div>
+      <div class="metric-trend">Verified &amp; closed</div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================================
+     Search & Filters Control Bar
+     ========================================================================= -->
+<div class="filter-bar">
+  <div class="filter-group">
+    <!-- Keyword Search -->
+    <div class="filter-search">
+      <label for="dashSearchInput" class="visually-hidden" style="display: none;">Search complaints</label>
+      <input 
+        type="search" 
+        id="dashSearchInput" 
+        class="form-control" 
+        placeholder="Filter by Ref ID, street name, citizen..." 
+        aria-label="Filter complaints"
+      >
+    </div>
+
+    <!-- Status Dropdown Filter -->
+    <div class="filter-select">
+      <label for="dashStatusFilter" class="visually-hidden" style="display: none;">Filter by status</label>
+      <select id="dashStatusFilter" class="form-control" aria-label="Filter by status">
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending Review</option>
+        <option value="progress">In Progress</option>
+        <option value="resolved">Resolved</option>
+      </select>
+    </div>
+
+    <!-- Category Dropdown Filter -->
+    <div class="filter-select">
+      <label for="dashCategoryFilter" class="visually-hidden" style="display: none;">Filter by category</label>
+      <select id="dashCategoryFilter" class="form-control" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="drainage">Drainage &amp; Sewage</option>
+        <option value="streetlights">Streetlights</option>
+        <option value="waste">Waste Collection</option>
+        <option value="roads">Roads &amp; Footpaths</option>
+        <option value="water">Water Supply</option>
+        <option value="parks">Parks &amp; Spaces</option>
+      </select>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <button type="button" id="resetFiltersBtn" class="btn btn-secondary btn-sm" aria-label="Reset all search filters">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      <span>Reset Filters</span>
+    </button>
+  </div>
+</div>
+
+<!-- =========================================================================
+     Dashboard Layout: Left Table & Right Selected Detail Panel
+     ========================================================================= -->
+<div class="dashboard-layout">
+
+  <!-- Left Column: Readable Complaints List / Table -->
+  <div class="table-container" role="region" aria-label="Complaints Queue">
+    <table id="complaintsTable" class="data-table">
+      <thead>
+        <tr>
+          <th scope="col">Reference ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Category</th>
+          <th scope="col">Location</th>
+          <th scope="col">Evidence</th>
+          <th scope="col">Status</th>
+          <th scope="col" style="text-align: right;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in complaints %}
+        <tr class="{% if loop.first %}selected{% endif %}" 
+            data-id="{{ c.id }}" 
+            data-date="{{ c.date }}" 
+            data-category="{{ c.category }}" 
+            data-location="{{ c.location }}" 
+            data-citizen="{{ c.citizen }}" 
+            data-phone="{{ c.phone }}" 
+            data-status="{{ c.status }}" 
+            data-desc="{{ c.desc }}"
+            data-notes="{{ c.department_notes }}"
+            data-images='{{ c.images|tojson if c.images else "[]" }}'>
+          <td><span class="table-ref-id">{{ c.id }}</span></td>
+          <td style="color: var(--color-text-muted); font-size: 0.8125rem;">{{ c.date }}</td>
+          <td>{{ c.category }}</td>
+          <td>{{ c.location }}</td>
+          <td>
+            {% if c.images and c.images|length > 0 %}
+              <span style="display: inline-flex; align-items: center; gap: 0.3rem; background: #f0fdf4; color: #166534; font-size: 0.725rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: var(--radius-full); border: 1px solid #bbf7d0;">
+                📷 {{ c.images|length }} photo{{ 's' if c.images|length > 1 else '' }}
+              </span>
+            {% else %}
+              <span style="color: var(--color-text-muted); font-size: 0.75rem;">None</span>
+            {% endif %}
+          </td>
+          <td>
+            {% if 'pending' in c.status.lower() %}
+            <span class="badge badge-pending"><span class="badge-dot"></span>Pending Review</span>
+            {% elif 'progress' in c.status.lower() %}
+            <span class="badge badge-progress"><span class="badge-dot"></span>In Progress</span>
+            {% else %}
+            <span class="badge badge-resolved"><span class="badge-dot"></span>Resolved</span>
+            {% endif %}
+          </td>
+          <td style="text-align: right;">
+            <button type="button" class="btn btn-secondary btn-sm" aria-label="View details for {{ c.id }}">Review</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Right Column: Selected Complaint Detail Area & Update Controls -->
+  <aside class="detail-panel" aria-label="Selected complaint inspector">
+    {% set first = complaints[0] if complaints else None %}
+    <div class="detail-panel-header">
+      <div>
+        <div class="detail-section-title">Selected Grievance</div>
+        <h2 id="detailRefId" style="font-size: 1.45rem; font-family: var(--font-mono); color: var(--color-primary); font-weight: 700;">{{ first.id if first else '—' }}</h2>
+      </div>
+      <div>
+        <span id="detailStatusBadge" class="badge {% if first and 'pending' in first.status.lower() %}badge-pending{% elif first and 'resolved' in first.status.lower() %}badge-resolved{% else %}badge-progress{% endif %}">
+          <span class="badge-dot"></span>{{ first.status if first else 'Pending' }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Metadata Details -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.25rem; font-size: 0.875rem;">
+      <div>
+        <div class="meta-item-label">Category</div>
+        <div id="detailCategory" class="meta-item-val">{{ first.category if first else '—' }}</div>
+      </div>
+      <div>
+        <div class="meta-item-label">Logged On</div>
+        <div id="detailDate" class="meta-item-val">{{ first.date if first else '—' }}</div>
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <div class="meta-item-label">Location / Landmark</div>
+        <div id="detailLocation" class="meta-item-val">{{ first.location if first else '—' }}</div>
+      </div>
+      <div>
+        <div class="meta-item-label">Citizen</div>
+        <div id="detailCitizen" class="meta-item-val">{{ first.citizen if first else 'Anonymous' }}</div>
+      </div>
+      <div>
+        <div class="meta-item-label">Contact Phone</div>
+        <div id="detailPhone" class="meta-item-val">{{ first.phone if first else '—' }}</div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="detail-section-title">Citizen's Statement</div>
+    <div id="detailDesc" class="detail-desc-box">
+      {{ first.desc if first else 'No grievance selected.' }}
+    </div>
+
+    <!-- =========================================================================
+         Officer Verification: Attached Photographic Proof Evidence
+         ========================================================================= -->
+    <div style="margin-top: 1.25rem; margin-bottom: 1.25rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <div class="detail-section-title" style="margin: 0; display: flex; align-items: center; gap: 0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+            <circle cx="9" cy="9" r="2"/>
+            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+          </svg>
+          <span>Uploaded Proof Evidence</span>
+        </div>
+        <span id="detailProofCount" style="font-size: 0.75rem; background: var(--color-bg-subtle, #f1f5f9); color: var(--color-text-muted); padding: 0.15rem 0.5rem; border-radius: var(--radius-full); font-weight: 600;">
+          {{ (first.images|length) if (first and first.images) else 0 }} photos
+        </span>
+      </div>
+      
+      <div id="detailProofImagesContainer" style="background: var(--color-bg-subtle, #f8fafc); border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem;">
+        <div id="detailProofGrid" style="display: flex; flex-wrap: wrap; gap: 0.65rem;">
+          {% if first and first.images and first.images|length > 0 %}
+            {% for img_url in first.images %}
+            <a href="{{ img_url }}" target="_blank" rel="noopener noreferrer" style="display: block; position: relative; width: 85px; height: 85px; border-radius: var(--radius-sm); overflow: hidden; border: 1.5px solid var(--color-border); box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: transform 0.15s; background: #fff;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Click to view full image in new tab">
+              <img src="{{ img_url }}" alt="Proof photo {{ loop.index }}" style="width: 100%; height: 100%; object-fit: cover;">
+              <span style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.65); color: #fff; font-size: 0.625rem; text-align: center; padding: 1px 0;">Photo {{ loop.index }}</span>
+            </a>
+            {% endfor %}
+          {% else %}
+            <div id="detailNoImagesMsg" style="color: var(--color-text-muted); font-size: 0.825rem; font-style: italic; padding: 0.5rem 0;">
+              No photographic proof attached to this ticket.
+            </div>
+          {% endif %}
+        </div>
+        <div style="font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.5rem;">
+          💡 <em>Click any photo thumbnail to inspect full high-resolution image in new tab.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- Department Action & Update Controls -->
+    <div class="update-controls-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h3 style="font-size: 0.9375rem; color: var(--color-primary); font-weight: 700; margin: 0; display: flex; align-items: center; gap: 0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Update Status &amp; Dispatch Notes</span>
+        </h3>
+        <span style="font-size: 0.725rem; background: #e0f2fe; color: #0369a1; padding: 0.15rem 0.45rem; border-radius: 4px; border: 1px solid #bae6fd;">
+          Officer: {{ officer.name if officer else 'Verified Staff' }}
+        </span>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 0.75rem;">
+        <label for="updateStatusSelect" class="form-label">
+          <span>Change Complaint Status</span>
+        </label>
+        <select id="updateStatusSelect" class="form-control" style="background-color: #ffffff;">
+          <option value="Pending Review">Pending Review</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Resolved">Resolved</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 0.75rem;">
+        <label for="updateInternalNotes" class="form-label">
+          <span>Officer Update / Public Resolution Note</span>
+        </label>
+        <textarea 
+          id="updateInternalNotes" 
+          class="form-control" 
+          rows="3" 
+          placeholder="e.g. Suction tanker dispatched to chamber #15. Expected completion by 4 PM."
+          style="min-height: 5rem; background-color: #ffffff;"
+        >{{ first.department_notes if first else '' }}</textarea>
+      </div>
+
+      <button type="button" id="updateStatusBtn" class="btn btn-primary btn-block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Save &amp; Notify Citizen</span>
+      </button>
+
+      <!-- Confirmation State Banner -->
+      <div id="updateConfirmBox" class="update-confirmation" role="status" aria-live="polite">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>Status successfully updated. Notification queued for citizen.</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- =========================================================================
+     Officer Proof Image Inspection Lightbox Modal
+     Allows authority to zoom, inspect severity, and verify proof validity
+     ========================================================================= -->
+<div id="imageInspectionModal" style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 1rem;">
+  <div style="position: relative; max-width: 900px; width: 100%; max-height: 90vh; background: #ffffff; border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35);">
+    
+    <!-- Modal Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.25rem; border-bottom: 1.5px solid var(--color-border); background: var(--color-bg-subtle, #f8fafc);">
+      <div>
+        <h3 id="modalTitle" style="font-size: 1.05rem; font-weight: 700; color: var(--color-primary); margin: 0;">
+          <span>Inspect Evidence Photo</span>
+        </h3>
+        <p id="modalSub" style="font-size: 0.775rem; color: var(--color-text-muted); margin: 2px 0 0 0;">
+          Evaluating reported civic grievance severity
+        </p>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a id="modalOpenTabBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.775rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <span>Open Full Resolution</span>
+        </a>
+        <button type="button" id="modalCloseBtn" class="btn btn-secondary btn-sm" style="padding: 0.4rem 0.6rem; cursor: pointer;" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Body with Full Image and Navigation Arrows -->
+    <div style="position: relative; flex: 1; min-height: 380px; max-height: calc(90vh - 140px); background: #0f172a; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+      <button type="button" id="modalPrevBtn" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10;">
+        ❮
+      </button>
+
+      <img id="modalMainImg" src="" alt="Proof Evidence" style="max-width: 100%; max-height: calc(90vh - 150px); object-fit: contain; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+
+      <button type="button" id="modalNextBtn" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10;">
+        ❯
+      </button>
+
+      <div id="modalImgIndex" style="position: absolute; bottom: 0.75rem; background: rgba(0,0,0,0.7); color: #fff; font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: var(--radius-full);">
+        Photo 1 of 1
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; border-top: 1.5px solid var(--color-border); background: #ffffff;">
+      <div id="modalContextInfo" style="font-size: 0.8125rem; color: var(--color-text);"></div>
+      <button type="button" id="modalDismissBtn" class="btn btn-secondary btn-sm">
+        <span>Close Preview</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
